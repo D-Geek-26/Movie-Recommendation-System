@@ -1,0 +1,71 @@
+body {
+    font-family: Sui Generis;
+    background-image:url(bg.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin:0;
+    color:white;
+    padding:200px;
+    display:flex;
+    justify-content:center;
+}
+.container {
+    width:1000px;
+    height: 750px;
+    background-image:linear-gradient(to right bottom,black,purple,navy,purple,navy,black);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding:30px;
+}
+.form-group {
+    margin-bottom:20px;
+}
+label {
+    display:block;
+    margin-bottom:5px;
+    font-weight:bold;
+}
+input[type="text"] {
+    width:100%;
+    padding:10px;
+    border: 1px solid white;
+    font-size:16px;
+}
+button {
+    width:100%;
+    padding:10px;
+    background-color:blue;
+    color:white;
+    border:solid 5px grey;
+    border-radius:15px;
+    font-size:16px;
+    cursor:pointer;
+}
+button:hover {
+    background-color:green;
+}
+.error {
+    color:red;
+    margin-top:80px;
+    text-align:center;
+}
+table {
+    background-color: antiquewhite;
+    width:100%;
+    color: black;
+    border-collapse:collapse;
+    margin-top:10px;
+}
+th,td {
+    padding:10px;
+    border:1px solid grey;
+    text-align:left;
+}
+th {
+    background-color:antiquewhite;
+    font-weight:bold;
+}
+.genres-list {
+    font-size:20pt;
+    margin-top:40px;
+}

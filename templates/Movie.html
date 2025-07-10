@@ -1,0 +1,43 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="static/Movie.css"/>
+    <title>Movie Recommender</title>
+</head>
+<body>
+    <div class="container">
+        <center><h1>Genre Based Movie Recommender</h1></center>
+        <form method="POST" action="/recommend">
+            <div class="form-group">
+                <label for="genres">Enter your desired genres:</label>
+                <input type="text" id="genres" name="genres" placeholder="Ex. Adventure,Comedy" required>
+            </div>
+            <button type="submit">Get Recommendations</button>
+        </form>
+        <div class="genres-list">
+            <p>Available genres: Action, Adventure, Animation, Children, Comedy, Crime, Documentary, Drama, Fantasy, Film-Noir, Horror, IMAX, Musical, Mystery, Romance, Sci-Fi, Thriller, War, Western</p>
+        </div>
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+        {% if recommendations %}
+            <h2>Recommended Movies</h2>
+            <table>
+                <tr>
+                    <th>Title</th>
+                    <th>Genres</th>
+                    <th>Similarity Score</th>
+                </tr>
+                {% for movie in recommendations %}
+                    <tr>
+                        <td>{{ movie.title }}</td>
+                        <td>{{ movie.genres }}</td>
+                        <td>{{ movie.similarity|round(4) }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% endif %}
+    </div>
+</body>
+</html>
